@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('foo','EmployeeController@all');
+
+Route::get('/employee/{family_name}/{given_name}/position', 'EmployeeController@nameGet');
+
+Route::post('/employee/{family_name}/{given_name}/position', 'EmployeeController@update');
