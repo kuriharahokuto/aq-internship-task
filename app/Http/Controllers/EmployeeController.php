@@ -24,7 +24,7 @@ class EmployeeController extends Controller
     $employee->position = $beacon->position;
     $employee->save();
 
-    return response()->json(Employee::all()->toArray(), 200, [], JSON_UNESCAPED_UNICODE);
+    return response()->json("SUCCESS",200);
   }
 
   public function nameGet($family_name, $given_name): \Illuminate\Http\JsonResponse
