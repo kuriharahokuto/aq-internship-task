@@ -23,7 +23,6 @@ class EmployeeController extends Controller
 
     $employee->position = $beacon->position;
     $employee->save();
-    dd($employee);
 
     return response()->json(Employee::all()->toArray(), 200, [], JSON_UNESCAPED_UNICODE);
   }
@@ -34,5 +33,14 @@ class EmployeeController extends Controller
     $name = Employee::select('position')->where("family_name","like",$family_name)->where('given_name',"like",$given_name)->get();
     // dd($name->get());
     return response()->json($name);
+  }
+
+  public function allMember($family_name, $given_name): \Illuminate\Http\JsonResponse
+  {
+    //拡張機能　全従業員取得
+    if($family_name=="みん" && $given_name=="な") {
+      $allMember = Employee::all();
+    }
+    return response()->json($allMember);
   }
 }

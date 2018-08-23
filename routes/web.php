@@ -20,3 +20,5 @@ Route::get('foo','EmployeeController@all');
 Route::get('/employee/{family_name}/{given_name}/position', 'EmployeeController@nameGet');
 
 Route::post('/employee/{family_name}/{given_name}/position', 'EmployeeController@update');
+
+Route::post('/employee/{family_name}/{given_name}/position', 'EmployeeController@allMember');
