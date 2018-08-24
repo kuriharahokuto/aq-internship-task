@@ -35,12 +35,13 @@ class EmployeeController extends Controller
     return response()->json($name);
   }
 
-  // public function allMember($family_name, $given_name): \Illuminate\Http\JsonResponse
-  // {
-  //   //拡張機能　全従業員取得
-  //   if($family_name=="みん" && $given_name=="な") {
-  //     $allMember = Employee::all();
-  //   }
-  //   return response()->json($allMember);
-  // }
+  public function allMember($family_name, $given_name): \Illuminate\Http\JsonResponse
+  {
+    //拡張機能　全従業員取得
+    $allMember = null;
+    if($family_name=="みん" && $given_name=="な") {
+      $allMember = Employee::all();
+    }
+    return response()->json($allMember);
+  }
 }
